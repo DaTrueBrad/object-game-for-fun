@@ -1,4 +1,3 @@
-/*This is meant to be a game where you can create characters and interract to see if you can kill the boss, Rick Sanchez, and win! Get his health to 0 and you have succeeded. */
 class Char {
     constructor(name, role, health, defense, meleeMove, rangeMove) {
       this.name = name
@@ -27,6 +26,7 @@ class Char {
       }
     }
   }
+  const readline = require('readline')
   
   let rick = new Char(`Rick`, `Scientist`, 80, 0, 7, 18)
   let sasuke = new Char(`Sasuke`, `Rogue Shinobi`, 140, 0, 12, 12)
@@ -35,22 +35,19 @@ class Char {
   console.log(sasuke)
   
   rick.attackMelee(sasuke)
-  rick.attackMelee(sasuke)
-  rick.attackMelee(sasuke)
-  rick.attackMelee(sasuke)
-  rick.attackMelee(sasuke)
-  rick.attackMelee(sasuke)
-  rick.attackMelee(sasuke)
-  rick.attackMelee(sasuke)
-  rick.attackMelee(sasuke)
-  rick.attackMelee(sasuke)
-  rick.attackMelee(sasuke)
-  rick.attackMelee(sasuke)
-  rick.attackMelee(sasuke)
-  rick.attackMelee(sasuke)
-  rick.attackMelee(sasuke)
-  rick.attackMelee(sasuke)
-  rick.attackMelee(sasuke)
-  rick.attackMelee(sasuke)
-  rick.attackMelee(sasuke)
-  rick.attackMelee(sasuke)
+  
+  //Line 29 and the code below needs to be adapted for user input for attack. Loop through both rick and sasuke until one of them is dead.//
+  
+  const reader = readline.createInterface({
+      input: process.stdin,
+      output: process.stdout
+    })
+  
+  reader.question("Who's turn is it now?", function(num){
+      if (+num === 12){
+          console.log("That's Adam's favorite!")
+      } else {
+          console.log("Womp womp thanks for playing")
+      }
+      reader.close();
+  })
